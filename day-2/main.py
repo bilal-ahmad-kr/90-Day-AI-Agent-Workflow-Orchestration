@@ -1,51 +1,47 @@
-# Python data types
-# Customer data processor
-customer_name = "Bilal Hassan"
-customer_age = 23
-customer_budget = 2000.0
-is_premium_customer = True
-country = "Pakistan"
-projects_completed = 5
-
-
-customer_skills = [
-    "Python",
-    "JavaScript",
-    "React",
-    "Node.js",
-    "Git",
-    "Docker",
-    "AWS",
+customers = [
+    {
+        "name" : "Bilal Hassan",
+        "age" : 23,
+        "budget": 3000,
+        "email": "bilalhassan@gmail.com",
+        "country": "Pakistan",
+        "projects": 5,
+        "skills": ["Python", "JavaScript", "SQL"],
+        "interests": ["AI", "Web Development", "Data Science"]
+    },
+    {
+        "name" : "Aleena Zahra",
+        "age" : 21,
+        "budget": 2500,
+        "email": "aleenazahra@gmail.com",
+        "country": "Pakistan",
+        "projects": 3,
+        "skills": ["Python", "ML", "AI"],
+        "interests": ["Machine Learning", "AI", "Data Analysis"]
+    },
+    {
+        "name" : "Ahmed Khan",
+        "age" : 25,
+        "budget": 4000,
+        "email": "ahmad@gmail.com",
+        "country": "Pakistan",
+        "projects": 7,
+        "skills": ["Python", "Django", "Flask"],
+        "interests": ["Web Development", "API Development", "DevOps"]
+    }
 ]
 
-customer = {
-    "name": customer_name,
-    "age": customer_age,
-    "budget": customer_budget,
-    "premium": is_premium_customer,
-    "country": country,
-    "projects": projects_completed,
-    "skills": customer_skills,
-}
+for index, customer in enumerate(customers):
+    print(f"Customer {index} information:")
+    print(f"Name: {customer['name']}")
+    print(f"Age: {customer['age']}")
+    print(f"Budget: {customer['budget']}")
+    print(f"Email: {customer['email']}")
+    print(f"Country: {customer['country']}")
+    print(f"Projects: {customer['projects']}")
+    print(f"Skills: {', '.join(customer['skills'])}")
+    print(f"Interests: {', '.join(customer['interests'])}")
 
-print("Customer Information")
-
-print(f"Name: {customer['name']}")
-print(f"Age: {customer['age']}")
-print(f"Budget: ${customer['budget']}")
-print(f"Premium Customer: {customer['premium']}")
-print(f"Country: {customer['country']}")
-print(f"Projects Completed: {customer['projects']}")
-
-print("\nSkills:")
-for skill in customer['skills']:
-    print(f"- {skill}")
-
-print("\nData Types")
-
-print(type(customer_name))
-print(type(customer_age))
-print(type(customer_budget))
-print(type(is_premium_customer))
-print(type(customer_skills))
-print(type(customer))
+    print("\nData Types:")
+    print(f"List of Customers Type: {type(customers)}")
+    print(f"Individual Customer Type: {type(customers[0])}")
